@@ -10,5 +10,8 @@ public class Main {
         //child class is empty but as it extends it has methods
         // but during debugging it will go to parent as idea cannot show as it extend thing in child.
 
+        // Method call starts with the GermanShepard object.
+        // Since it doesn't have its own doBark() method,
+        // Java executes the inherited implementation from Dog.
     }
 }
