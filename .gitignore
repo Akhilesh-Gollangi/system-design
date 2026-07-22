@@ -6,6 +6,7 @@
 out/
 target/
 build/
+.build/
 
 # Logs
 *.log
