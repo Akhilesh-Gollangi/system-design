@@ -36,6 +36,9 @@ public class Main {
         Sim sim1 = new Jio();
         sim1.calling();
 
+        //we can create abstract method in 2 ways
+        //abstract classes
+        //interfaces
 
         /*
             The purpose of this is decoupling (minmal changes)
@@ -44,10 +47,6 @@ public class Main {
         CallerManagement callerManagement = new CallerManagement();
         callerManagement.call(new Airtel());
         callerManagement.call(new Jio());
-
-        //we can create abstract method in 2 ways
-            //abstract classes
-            //interfaces
 
 
     }
