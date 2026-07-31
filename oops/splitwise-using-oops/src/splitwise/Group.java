@@ -1,5 +1,6 @@
 package splitwise;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,9 @@ public class Group {
     public Group(String id, String name) {
         this.id = id;
         this.name = name;
+        this.members = new ArrayList<>();
+        this.splits = new ArrayList<>();
+        this.expenses = new ArrayList<>();
     }
 
     public String getId() {
@@ -67,8 +71,8 @@ public class Group {
      * Adds a new user to this group.
      * The added user can take part in future group expenses.
      */
-    public void addMember(String id, String name) {
-        members.add(new User(id,name));
+    public void addMember(User member) {
+        members.add(member);
     }
 
     /**
@@ -79,9 +83,11 @@ public class Group {
      *  addExpense : as soon as I add an expense splits should be generated
      */
     public void addExpense(Expense expense, List<User> users, List<Double> amount) {
+        // At runtime polymorphism they can use the object they want
         List<Split> splitList = expense.calculateSplit(users, amount);
         splits.addAll(splitList);
         expenses.add(expense);
+        System.out.println(splitList);
     }
 
 
@@ -89,14 +95,13 @@ public class Group {
      * Calculates the final balance of one user from all split records.
      * A positive balance means the user should receive money; a negative balance means the user owes money.
      */
-    public double getUserBalance(String userId, List<Split> splits) {
+    public double getUserBalance(String userId) {
         double balance = 0;
         for(Split split : splits) {
             if(split.getCreditor().getId().equals(userId)) {
                 balance += split.getAmount();
             } else if (split.getDebitor().getId().equals(userId))  {
                 balance -= split.getAmount();
-
             }
         }
         return balance;

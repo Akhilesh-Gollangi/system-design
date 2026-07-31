@@ -33,4 +33,19 @@ public class Splitwise {
         return group;
     }
 
+    public double getOverallBalanceofUser(String userId) {
+        double totalAmount = 0;
+        for (Group group:groups.values()) {
+            totalAmount += group.getUserBalance(userId);
+        }
+        return totalAmount;
+    }
+
+    public Map<String, User> getUsers() {
+        return users;
+    }
+
+    public Map<String, Group> getGroups() {
+        return groups;
+    }
 }

@@ -10,12 +10,12 @@ public class Split {
 
     private User creditor;
 
-    private User Debitor;
+    private User debitor;
 
     public Split(double amount, User creditor, User debitor) {
         this.amount = amount;
         this.creditor = creditor;
-        Debitor = debitor;
+        this.debitor = debitor;
     }
 
     public double getAmount() {
@@ -27,6 +27,15 @@ public class Split {
     }
 
     public User getDebitor() {
-        return Debitor;
+        return debitor;
+    }
+
+    @Override
+    public String toString() {
+        return "{\n" +
+                "  \"amount\": " + amount + ",\n" +
+                "  \"creditor\": \"" + creditor + "\",\n" +
+                "  \"debitor\": \"" + debitor + "\"\n" +
+                "}";
     }
 }
