@@ -2,6 +2,9 @@ package splitwise;
 
 import java.util.List;
 
+/**
+ *
+ */
 public abstract class Expense {
 
     private String description;
@@ -19,7 +22,13 @@ public abstract class Expense {
         this.id = id;
     }
 
-    //we need to have abstract method to calculate the split
+    /**
+     * Once User want to split, he can split in the he wants (EQUALS, PERCENTAGE, EXACT amount)
+     * Instead of having 3 method for each type, we have only method which extended by classes which needed
+     * This is helps because new Type came in future it will not touch this class
+     * they can easily extend this class and have their implemenetations
+     * At runtime polymorphism they can use the object they want
+     */
     public abstract List<Split> calculateSplit(List<User> members, List<Double> expense);
 
     public String getDescription() {

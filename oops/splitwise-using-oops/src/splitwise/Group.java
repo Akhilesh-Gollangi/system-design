@@ -2,6 +2,10 @@ package splitwise;
 
 import java.util.List;
 
+/**
+ * Represents a group of users who share expenses together.
+ * It keeps the group's members, expenses, and split records in one place.
+ */
 public class Group {
 
     private String id;
@@ -59,12 +63,21 @@ public class Group {
         this.splits = splits;
     }
 
-    // add member
+    /**
+     * Adds a new user to this group.
+     * The added user can take part in future group expenses.
+     */
     public void addMember(String id, String name) {
         members.add(new User(id,name));
     }
 
-    // Add Expense
+    /**
+     * Based on the Type of the Expense we get, we call that particular object method
+     * The decision to call which method is decided at runtime
+     * In future we get any new type still we donot get any changes here
+     * because just based on the type of the object, it will call the specific method
+     *  addExpense : as soon as I add an expense splits should be generated
+     */
     public void addExpense(Expense expense, List<User> users, List<Double> amount) {
         List<Split> splitList = expense.calculateSplit(users, amount);
         splits.addAll(splitList);
@@ -72,7 +85,10 @@ public class Group {
     }
 
 
-    //get balance for a user
+    /**
+     * Calculates the final balance of one user from all split records.
+     * A positive balance means the user should receive money; a negative balance means the user owes money.
+     */
     public double getUserBalance(String userId, List<Split> splits) {
         double balance = 0;
         for(Split split : splits) {

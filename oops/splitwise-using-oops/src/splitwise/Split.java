@@ -1,5 +1,9 @@
 package splitwise;
 
+/**
+ * Represents one payment relationship created from an expense.
+ * It records how much the debitor needs to pay the creditor.
+ */
 public class Split {
 
     private double amount;

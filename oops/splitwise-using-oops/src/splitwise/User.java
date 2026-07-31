@@ -1,5 +1,8 @@
 package splitwise;
 
+/**
+ * user is member of a group, which has only id, name
+ */
 public class User {
 
     private String id;
