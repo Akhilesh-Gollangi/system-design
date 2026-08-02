@@ -23,6 +23,12 @@ public class Main {
         trip1.addMember(pidel);
 
         Expense expense = new EqualsExpense("Weekend",5000,akhil,"e1");
+//        expense.calculateSplit() but we cannot do this, we are doing split and we have add to group
+        // this calculatesplit, adding it to that group splits
+        // this functionalities should be implemented group
+        // as user from UI we give amount and userPaid
+        // but app has to done the split -> this is done in Group as
+        // we add money in group, group has to split so this is funcationlity belongs to group
         trip1.addExpense(expense,List.of(baji,boku,pidel),null);
 
         Expense bike = new PercentageExpense("Bike",10000,boku,"e1");

@@ -23,7 +23,7 @@ public abstract class Expense {
     }
 
     /**
-     * Once User want to split, he can split in the he wants (EQUALS, PERCENTAGE, EXACT amount)
+     * Once User want to split, he can split in the type he wants (EQUALS, PERCENTAGE, EXACT amount)
      * Instead of having 3 method for each type, we have only method which extended by classes which needed
      * This is helps because new Type came in future it will not touch this class
      * they can easily extend this class and have their implemenetations
