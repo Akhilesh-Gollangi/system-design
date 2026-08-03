@@ -69,7 +69,7 @@ public class Group {
     }
 
     //calculate splits
-    public void calculateSplits(Expense expense, List<User> users, List<Double> values) {
+    public void addExpense(Expense expense, List<User> users, List<Double> values) {
         // runtime polymorphism
         List<Split> splits = expense.calculateSplit(users, values);
         splitList.addAll(splits);

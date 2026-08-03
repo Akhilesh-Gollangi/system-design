@@ -20,18 +20,18 @@ public class Main {
         group1.addUser(eshu);
 
         Expense expense = new EqualExpense("1","CAB",akhil, 1000);
-        group1.calculateSplits(expense, List.of(baji,eshu),null);
+        group1.addExpense(expense, List.of(baji,eshu),null);
         System.out.println(group1.toString());
         System.out.println(group1.getUserBalance(baji));
 
         Expense expense2 = new PercentageExpense("2","HOTEL",eshu, 5000);
-        group1.calculateSplits(expense2, List.of(akhil,baji), Arrays.asList(80.0,20.0));
+        group1.addExpense(expense2, List.of(akhil,baji), Arrays.asList(80.0,20.0));
         System.out.println(group1.toString());
         System.out.println(group1.getUserBalance(akhil));
 
 
         Expense expense3 = new ExactExpense("3","HOTEL",baji, 1000);
-        group1.calculateSplits(expense3, List.of(akhil,eshu), Arrays.asList(200.0,800.0));
+        group1.addExpense(expense3, List.of(akhil,eshu), Arrays.asList(200.0,800.0));
         System.out.println(group1.toString());
         System.out.println(group1.getUserBalance(eshu));
 
