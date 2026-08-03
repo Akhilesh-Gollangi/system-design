@@ -1,4 +1,4 @@
-package com.ecommercediscount;
+package com.usecase.ecommercediscount;
 
 public class CreditcardDiscount implements Idisocunt{
     @Override
