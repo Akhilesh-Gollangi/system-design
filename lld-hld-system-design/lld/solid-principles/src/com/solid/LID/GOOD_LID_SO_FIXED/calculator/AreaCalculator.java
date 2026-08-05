@@ -1,4 +1,6 @@
-package com.solid.LID.GOOD_LID_SO_FIXED;
+package com.solid.LID.GOOD_LID_SO_FIXED.calculator;
+
+import com.solid.LID.GOOD_LID_SO_FIXED.interfaces.IShape2D;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.solid.LID.GOOD_LID_SO_FIXED;
+package com.solid.LID.GOOD_LID_SO_FIXED.shapes;
+
+import com.solid.LID.GOOD_LID_SO_FIXED.interfaces.IShape2D;
 
 public class Circle implements IShape2D {
 
