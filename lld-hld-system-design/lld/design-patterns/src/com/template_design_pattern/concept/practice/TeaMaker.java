@@ -1,4 +1,4 @@
-package com.template_design_pattern.concept;
+package com.template_design_pattern.concept.practice;
 
 public class TeaMaker extends BevargeMaker {
 
