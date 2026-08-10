@@ -1,4 +1,4 @@
-package com.strategy_pattern.concept;
+package com.strategy_design_pattern.concept;
 
 // this is caller class
 // In strategy pattern this is known as the client class

@@ -1,4 +1,4 @@
-package com.strategy_pattern.concept;
+package com.strategy_design_pattern.concept;
 
 // This is context class
 // which acts as Intermidate between client and concerte classes

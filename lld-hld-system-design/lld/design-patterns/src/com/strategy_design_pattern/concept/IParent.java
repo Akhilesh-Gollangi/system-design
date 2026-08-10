@@ -1,4 +1,4 @@
-package com.strategy_pattern.concept;
+package com.strategy_design_pattern.concept;
 
 // This is Strategy Interface
 // which is our parent which enforce to maintain this consistency
