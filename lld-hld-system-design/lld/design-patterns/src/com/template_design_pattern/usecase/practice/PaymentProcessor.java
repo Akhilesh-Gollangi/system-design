@@ -4,8 +4,10 @@ public abstract class PaymentProcessor {
 
     public abstract IPayment createPayment();
 
+    // I have intentinal keep some method as private
+    // because there is no need of overiding these as it will be same in all the child classes
     private void validation(double amount) {
-        if(amount<0) {
+        if (amount < 0) {
             throw new IllegalArgumentException("amount must be greater than 0");
         }
         System.out.println("Successfully validated");
@@ -20,13 +22,13 @@ public abstract class PaymentProcessor {
     }
 
     private void logTransaction(double amount) {
-        System.out.println("We have done trasaction of amount : "+ amount);
+        System.out.println("We have done trasaction of amount : " + amount);
     }
 
     public void processOrder(double amount) {
         validation(amount);
         if (requiredOTPVerification()) {
-            if(!OTPVerification()) {
+            if (!OTPVerification()) {
                 throw new IllegalArgumentException("OTP is invalid");
             }
             System.out.println("OTP verfication completed");
