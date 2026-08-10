@@ -1,4 +1,4 @@
-package com.builder_design_pattern.concept.practice.badversion;
+package com.builder_design_pattern.concept.practice.withoutbuilder;
 
 public class Main {
     public static void main(String[] args) {

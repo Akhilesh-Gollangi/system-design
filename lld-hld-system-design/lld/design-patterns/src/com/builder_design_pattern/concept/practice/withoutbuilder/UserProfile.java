@@ -1,4 +1,4 @@
-package com.builder_design_pattern.concept.practice.badversion;
+package com.builder_design_pattern.concept.practice.withoutbuilder;
 
 public class UserProfile {
     // without final we are warning because, During object creation only we are setting the values

@@ -1,4 +1,4 @@
-package com.builder_design_pattern.concept.practice.goodversion;
+package com.builder_design_pattern.concept.practice.withbuilder;
 
 public class UserProfile {
     private final String firstName;
