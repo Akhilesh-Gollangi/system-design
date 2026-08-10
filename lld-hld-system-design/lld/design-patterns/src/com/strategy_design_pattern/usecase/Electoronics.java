@@ -1,4 +1,4 @@
-package com.strategy_pattern.usecase;
+package com.strategy_design_pattern.usecase;
 
 public class Electoronics implements  ICategory,IPrice{
     @Override

@@ -1,4 +1,4 @@
-package com.strategy_pattern.usecase;
+package com.strategy_design_pattern.usecase;
 
 public interface IPrice {
 

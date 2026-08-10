@@ -1,4 +1,4 @@
-package com.strategy_pattern.concept;
+package com.strategy_design_pattern.concept;
 
 public class Child3 implements IParent {
     @Override
