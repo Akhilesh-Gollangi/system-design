@@ -29,5 +29,9 @@ public class Main {
            the only difference is in Strategy dp client will create object and do setter or constructor injection to context class
            but here Concrete strategies classes are responsibile for creating object and do setter injection to context class
          */
+
+        // if you see in Play, Pause, Stop class
+        // we are creating object everytime, if 1million user use application, it will crash due to memory
+        // to handle this Singleton disney pattern exist we will discuss that next
     }
 }
