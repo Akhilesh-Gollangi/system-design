@@ -1,4 +1,4 @@
-package com.state_design_pattern.notes.withstatedp;
+package com.singleton_design_pattern.usecase.multimedia_withstate_dp.practice;
 
 public interface IState {
 

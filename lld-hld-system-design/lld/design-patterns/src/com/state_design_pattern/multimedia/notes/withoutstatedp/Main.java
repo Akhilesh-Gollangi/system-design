@@ -1,4 +1,4 @@
-package com.state_design_pattern.notes.withoutstatedp;
+package com.state_design_pattern.multimedia.notes.withoutstatedp;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.state_design_pattern.practice.withoutstatedp;
+package com.state_design_pattern.multimedia.practice.withoutstatedp;
 
 public class MediaPlayer {
 

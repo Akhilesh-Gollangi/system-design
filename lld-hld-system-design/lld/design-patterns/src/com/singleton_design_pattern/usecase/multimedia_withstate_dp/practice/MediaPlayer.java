@@ -1,8 +1,8 @@
-package com.state_design_pattern.notes.withstatedp;
+package com.singleton_design_pattern.usecase.multimedia_withstate_dp.practice;
 
 public class MediaPlayer
 {
-    private  IState state = new StopState();
+    private IState state = StopState.getInstance();
 
     public IState getState() {
         return state;

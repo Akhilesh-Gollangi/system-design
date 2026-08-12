@@ -1,4 +1,4 @@
-package com.state_design_pattern.practice.withstatedp;
+package com.state_design_pattern.multimedia.practice.withstatedp;
 
 public class Main {
     public static void main(String[] args) {

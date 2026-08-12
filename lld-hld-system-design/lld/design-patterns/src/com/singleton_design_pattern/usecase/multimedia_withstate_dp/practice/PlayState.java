@@ -1,6 +1,19 @@
-package com.state_design_pattern.notes.withstatedp;
+package com.singleton_design_pattern.usecase.multimedia_withstate_dp.practice;
 
 public class PlayState implements IState {
+
+    private static final PlayState playState = new PlayState();
+
+    private PlayState() {
+
+    }
+
+    public static PlayState getInstance() {
+        return playState;
+    }
+
+
+
     @Override
     public void play(MediaPlayer player) {
         System.out.println("Already Playing");
@@ -9,13 +22,13 @@ public class PlayState implements IState {
     @Override
     public void pause(MediaPlayer player) {
         System.out.println(" Pausing now");
-        player.setState(new PauseState());
+        player.setState(PauseState.getInstance());
     }
 
     @Override
     public void stop(MediaPlayer player) {
         System.out.println(" Stopping now");
-        player.setState(new StopState());
+        player.setState(StopState.getInstance());
 
     }
 }

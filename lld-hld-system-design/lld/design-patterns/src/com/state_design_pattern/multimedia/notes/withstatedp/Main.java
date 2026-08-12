@@ -1,4 +1,4 @@
-package com.state_design_pattern.notes.withstatedp;
+package com.state_design_pattern.multimedia.notes.withstatedp;
 
 public class Main {
 

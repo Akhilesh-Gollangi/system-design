@@ -1,4 +1,4 @@
-package com.state_design_pattern.practice.withoutstatedp;
+package com.state_design_pattern.multimedia.practice.withoutstatedp;
 
 /*
    Here agenda is to create media player functionality with 3 functionalities
