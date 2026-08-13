@@ -25,6 +25,12 @@ public class Main {
         youtubeChannel.subscribe(boku);
         youtubeChannel.uploadVideo("https://www.hacker.com/hacking");
 
+        // even when we get new Isubscription type still, we can Send that object in subscribe
+        //user will be notified in that way
+        // there will no change in channel (SUbject)
+        // Subject will not responsible for how notification is sent
+        //Observer has to take care of notification sent logic
+
 
     }
 }
