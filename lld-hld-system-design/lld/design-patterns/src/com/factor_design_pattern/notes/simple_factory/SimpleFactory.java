@@ -1,7 +1,6 @@
-package com.factor_design_pattern.simple_factory;
+package com.factor_design_pattern.notes.simple_factory;
 
 
-import java.util.HashMap;
 import java.util.Map;
 
 // this is simple factory

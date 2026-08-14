@@ -1,6 +1,0 @@
-package com.factor_design_pattern.factory_method.factory_of_levels;
-
-public interface IEnemy {
-
-    void attack();
-}

@@ -1,4 +1,4 @@
-package com.factor_design_pattern.simple_factory;
+package com.factor_design_pattern.notes.simple_factory;
 
 //Factory design pattern is a creational design pattern
 // which will provide function to get object, that function has logic to create object

@@ -1,4 +1,4 @@
-package com.factor_design_pattern.factory_method.factory_of_levels;
+package com.factor_design_pattern.notes.factory_method.factory_of_levels;
 
 //Factory Design pattern is creational design pattern
 // define an  interface for creating the objects,but let the subclass decide which object to be  intiated

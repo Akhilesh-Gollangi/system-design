@@ -1,4 +1,4 @@
-package com.factor_design_pattern.simple_factory;
+package com.factor_design_pattern.notes.factory_method.factory_of_levels;
 
 public class Goblin implements IEnemy {
     @Override
