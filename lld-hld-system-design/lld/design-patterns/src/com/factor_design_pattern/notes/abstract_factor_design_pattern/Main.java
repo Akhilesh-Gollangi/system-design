@@ -16,6 +16,7 @@ public class Main {
         // Here we are design in such way that Furniture store always get chair and sofa of same type
         // It is impossible to get chair of victorian and sofa of modern viceversa
         // In this we restrict and getting group of object of similar type and traits
+        // when we want grp of object then we can use this pattern
 
         FurnitureFactory modernFactory = new ModernFurnitureFactory();
         FurnitureStore furnitureStore = new FurnitureStore();
