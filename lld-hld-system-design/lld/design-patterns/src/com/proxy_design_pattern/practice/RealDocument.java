@@ -1,4 +1,4 @@
-package com.proxy_design_pattern;
+package com.proxy_design_pattern.practice;
 
 // the problem here
 // we create object it will take some  time to create object because loadFromdisk has complex logic and operaitons

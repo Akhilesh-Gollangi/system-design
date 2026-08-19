@@ -1,4 +1,4 @@
-package com.proxy_design_pattern;
+package com.proxy_design_pattern.practice;
 
 public class Main {
 
