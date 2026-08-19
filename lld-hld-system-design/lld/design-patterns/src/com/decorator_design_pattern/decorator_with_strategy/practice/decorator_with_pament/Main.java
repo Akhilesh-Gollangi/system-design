@@ -1,4 +1,4 @@
-package com.decorator_design_pattern.assignment.practice.decorator_with_pament;
+package com.decorator_design_pattern.decorator_with_strategy.practice.decorator_with_pament;
 
 // Here we have Ipayment Interface with abstract pay method
 // this is IPayement is implemeneted by card and upi and each have overriden pay and have their own logic

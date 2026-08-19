@@ -1,4 +1,4 @@
-package com.decorator_design_pattern.assignment.practice.decorator_with_pament;
+package com.decorator_design_pattern.decorator_with_strategy.practice.decorator_with_pament;
 
 //now this class become context class for FeeDecorator
 // which take DI and perform operation

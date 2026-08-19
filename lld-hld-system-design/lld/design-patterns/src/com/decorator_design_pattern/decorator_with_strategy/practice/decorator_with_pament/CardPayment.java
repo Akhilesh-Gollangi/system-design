@@ -1,4 +1,4 @@
-package com.decorator_design_pattern.assignment.practice.decorator_with_pament;
+package com.decorator_design_pattern.decorator_with_strategy.practice.decorator_with_pament;
 
 public class CardPayment implements IPayment {
     @Override

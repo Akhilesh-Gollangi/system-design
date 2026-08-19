@@ -1,4 +1,4 @@
-package com.decorator_design_pattern.assignment.notes.decorator_pattern;
+package com.decorator_design_pattern.decorator_with_strategy.notes.decorator_pattern;
 
 public class CardReward implements IRewardStrategy {
 

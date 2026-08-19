@@ -1,4 +1,4 @@
-package com.decorator_design_pattern.assignment.practice.decorator_with_pament;
+package com.decorator_design_pattern.decorator_with_strategy.practice.decorator_with_pament;
 
 // here we need Ipayment because we have call those pay method with object
 public abstract class BaseDecorator implements IPayment {
