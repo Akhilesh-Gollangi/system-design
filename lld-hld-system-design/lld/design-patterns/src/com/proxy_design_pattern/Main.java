@@ -15,5 +15,7 @@ public class Main {
 
         DocumentProxy documentProxy = new DocumentProxy("ASA");
         documentProxy.display();
+
+        //in document proxy we load disk when we are dispalyinh actualy lazy loading
     }
 }
