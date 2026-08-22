@@ -1,0 +1,25 @@
+Parking Lot System — Problem Statement
+Design a parking lot system for a facility (mall, airport, office complex) that manages vehicle entry, exit, spot allocation, and fee collection across multiple floors.
+Structure of the lot
+The lot has multiple floors. Each floor contains a fixed number of parking spots. Spots come in different sizes — Compact, Large, and Handicap. Vehicles come in different types — Car, Bike, Truck — and each vehicle type can only occupy spots of a compatible size (a Truck cannot fit in a Compact spot; a Bike can technically fit anywhere but shouldn't be assigned a Large spot if a smaller one is free, to avoid wasting space for a vehicle that actually needs it).
+Entry flow
+When a vehicle arrives, the system must find an available spot matching that vehicle's size requirement, assign the vehicle to that spot, and issue a ticket recording which vehicle is parked, which spot it occupies, and the entry timestamp. If no compatible spot is available anywhere in the lot, entry must be rejected with a clear reason rather than the system crashing, misassigning an incompatible spot, or silently doing nothing.
+Exit flow
+When a vehicle leaves, it presents its ticket. The system calculates the parking fee based on how long the vehicle was parked (using the ticket's entry timestamp against the current time), releases the spot back to available, and closes out the ticket.
+Fee calculation
+Pricing must support multiple, independently swappable schemes — for example, a flat hourly rate for cars, a different rate for bikes, and potentially a weekend or peak-hour surcharge added later. Adding a new pricing scheme must not require rewriting or modifying the entry/exit flow itself.
+Spot behavior
+Each parking spot has its own condition at any given moment — Available, Occupied, or Reserved (booked ahead of time but not yet occupied) — and what actions are valid on a spot (can a vehicle park here right now? can it be reserved?) should be determined by the spot's own current condition, not by scattered conditional checks living outside the spot.
+Reporting
+The system must be able to report how many spots are currently available, both per individual floor and as a single combined total across the entire lot, without the reporting logic needing to know in advance how many floors exist or manually loop through them in a special way.
+Object creation
+Creating parking spot objects (by type) should be centralized in one place rather than having spot-construction code scattered wherever a new spot happens to be needed — same for vehicle objects if the system constructs them internally.
+Single source of truth
+Only one parking lot instance should exist for a given physical location. Every entry, exit, and availability check across the entire system must operate against that same shared state — there should be no way for two different parts of the system to end up with two different, disagreeing views of which spots are occupied.
+
+//skip these for now
+Simple external interface
+Whatever component is closest to the physical world — a gate controller, a mobile app backend, an attendant's terminal — should be able to park and unpark a vehicle through a single, simple call each, without needing to know about or manually coordinate spot-finding, ticket creation, and fee calculation itself.
+Non-functional / stretch goal
+If ticket history or spot lookups become expensive (e.g. pulled from a database) or need to be access-controlled (e.g. only admins can view another user's ticket history), that concern should be addable without changing the core lookup logic itself.
+
