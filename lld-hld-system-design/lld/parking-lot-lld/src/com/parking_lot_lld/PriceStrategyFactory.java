@@ -7,14 +7,15 @@ import java.util.Map;
 
 public class PriceStrategyFactory {
 
-    private static Map<SpotSize, IPricingStrategy> pricingStrategyMap= new HashMap<>();
+    private static final Map<SpotSize, IPricingStrategy> pricingStrategyMap = new HashMap<>();
 
     static {
-        pricingStrategyMap.put(SpotSize.COMPACT,new TwoWheelHourlyPricing());
+        pricingStrategyMap.put(SpotSize.COMPACT, new TwoWheelHourlyPricing());
         pricingStrategyMap.put(SpotSize.LARGE, new FourWheelerHourlyPricing());
+        pricingStrategyMap.put(SpotSize.HEAVY, new HeavyWheelerHourlyPricing());
     }
 
-    public static IPricingStrategy getPricingStrategy(SpotSize spotSize) {
+    public IPricingStrategy getPricingStrategy(SpotSize spotSize) {
         return pricingStrategyMap.get(spotSize);
     }
 }
