@@ -1,7 +1,6 @@
-package com.parking_lot_lld;
+package com.parking_lot_lld.state;
 
-import com.parking_lot_lld.interfaces.ISpot;
-import com.parking_lot_lld.interfaces.IState;
+import com.parking_lot_lld.model.spot.ISpot;
 
 public class OccupiedState implements IState {
 

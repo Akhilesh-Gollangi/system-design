@@ -1,4 +1,6 @@
-package com.parking_lot_lld.interfaces;
+package com.parking_lot_lld.state;
+
+import com.parking_lot_lld.model.spot.ISpot;
 
 public interface IState {
 

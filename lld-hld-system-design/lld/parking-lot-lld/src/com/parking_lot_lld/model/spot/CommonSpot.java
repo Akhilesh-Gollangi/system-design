@@ -1,17 +1,12 @@
-package com.parking_lot_lld;
+package com.parking_lot_lld.model.spot;
 
-import com.parking_lot_lld.interfaces.ISpot;
-import com.parking_lot_lld.interfaces.IState;
+import com.parking_lot_lld.state.AvailableState;
+import com.parking_lot_lld.state.IState;
 
-public class LargeSpot implements ISpot {
+public abstract class CommonSpot implements ISpot{
 
     // default state is available
     private IState state = AvailableState.getInstance();
-
-    @Override
-    public SpotSize getSize() {
-        return SpotSize.LARGE;
-    }
 
     @Override
     public void setState(IState state) {
