@@ -56,12 +56,15 @@ public class VendingMachineFacade {
             throw new InSufficientReserve("Don't have enough reserve to give change");
         }
 
+        machine.setState(DispenseState.getInstance());
+
+        slot.dispense();
+
         machine.releaseChange(change);
         machine.receivedCash(amountReceived);//we are adding amount to reserver for now
         // in future this should happen only for cash
 
-        machine.setState(DispenseState.getInstance());
-        slot.dispense();
+
 
         Transaction transaction =  machine.getPendingPurchase().completeTransaction(slot.getSlotId(),
                 slot.getProductName(),
