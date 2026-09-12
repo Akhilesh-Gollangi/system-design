@@ -66,9 +66,8 @@ public class VendingMachineFacade {
 
 
 
-        Transaction transaction =  machine.getPendingPurchase().completeTransaction(slot.getSlotId(),
-                slot.getProductName(),
-                slot.getPrice(),paymentMethod,amountReceived,change,System.currentTimeMillis());
+        Transaction transaction =  machine.getPendingPurchase().completeTransaction(paymentMethod,
+                amountReceived,change,System.currentTimeMillis());
         transactionManager.save(transaction);
 
         machine.resetPurchase();

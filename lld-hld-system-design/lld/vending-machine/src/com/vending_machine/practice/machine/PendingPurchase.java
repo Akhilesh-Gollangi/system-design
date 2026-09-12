@@ -41,9 +41,10 @@ public class PendingPurchase {
         return amount;
     }
 
-    public Transaction completeTransaction(String slotId, String productName, double price, PaymentMethod paymentMethod,
-                                           double amountReceived, double changeGiven, long timestamp) {
-        return new Transaction(slotId, productName, price, paymentMethod, amountReceived, changeGiven, timestamp);
+    public Transaction completeTransaction(PaymentMethod paymentMethod, double amountReceived,
+                                           double changeGiven, long timestamp) {
+        return new Transaction(slot.getSlotId(), slot.getProductName(), slot.getPrice(),
+                paymentMethod, amountReceived, changeGiven, timestamp);
     }
 
 
