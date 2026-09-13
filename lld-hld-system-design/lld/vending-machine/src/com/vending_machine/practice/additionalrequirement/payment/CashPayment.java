@@ -1,5 +1,6 @@
 package com.vending_machine.practice.additionalrequirement.payment;
 
+import com.vending_machine.practice.additionalrequirement.machine.VendingMachine;
 import com.vending_machine.practice.additionalrequirement.payment.exception.InValidPaymentException;
 
 public class CashPayment implements IPaymentStrategy {
@@ -11,4 +12,17 @@ public class CashPayment implements IPaymentStrategy {
         }
         return amount;
     }
+
+//    public void releaseChange(VendingMachine machine, double change) {
+//        machine.releaseChange(change);
+//    }
+//
+//    public void receivedCash(VendingMachine machine, double amountReceived) {
+//        machine.receivedCash(amountReceived);
+//    }
+
+    public boolean doesAffectReserveCash() {
+        return true;
+    }
+
 }

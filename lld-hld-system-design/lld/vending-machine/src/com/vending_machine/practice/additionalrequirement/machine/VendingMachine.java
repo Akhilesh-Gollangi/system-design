@@ -95,5 +95,9 @@ public class VendingMachine {
         state.cancel(this);
     }
 
+    public double amountInReserve() {
+       return changeService.getReserve();
+    }
+
 
 }

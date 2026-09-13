@@ -1,5 +1,5 @@
 package com.vending_machine.practice.additionalrequirement.common;
 
 public enum PaymentMethod {
-    CARD,CASH,UPI
+    CARD, CASH, UPI, SPECIAL_CARD, UPI_REWARD
 }

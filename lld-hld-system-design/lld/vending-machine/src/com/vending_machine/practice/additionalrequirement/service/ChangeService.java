@@ -19,4 +19,8 @@ public class ChangeService {
     public void releaseChange(double amount) {
         this.reserve-=amount;
     }
+
+    public double getReserve() {
+        return reserve;
+    }
 }

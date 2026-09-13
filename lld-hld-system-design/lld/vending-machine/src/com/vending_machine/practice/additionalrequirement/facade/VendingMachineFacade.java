@@ -28,7 +28,6 @@ public class VendingMachineFacade {
     }
 
 
-
     public void selectSlot(String id) {
         machine.selectSlot(id);
     }
@@ -50,7 +49,7 @@ public class VendingMachineFacade {
         double amountReceived = machine.getPendingPurchase().getAmountReceived();
         double change = amountReceived - slot.getPrice();
 
-        if(!machine.canMakeChange(change)) {
+        if (!machine.canMakeChange(change)) {
             machine.resetPurchase();
             machine.setState(IdleState.getInstance());
             throw new InSufficientReserve("Don't have enough reserve to give change");
@@ -60,14 +59,43 @@ public class VendingMachineFacade {
 
         slot.dispense();
 
-        machine.releaseChange(change);
-        machine.receivedCash(amountReceived);//we are adding amount to reserver for now
-        // in future this should happen only for cash
+
+//        machine.releaseChange(change);
+//        machine.receivedCash(amountReceived);//we are adding amount to reserver for now
+//        // in future this should happen only for cash
+
+        // in simple way we can do just condition check
+//        if (paymentMethod == PaymentMethod.CASH || something) {
+//            machine.releaseChange(change);
+//            machine.receivedCash(amountReceived);
+//        }
+        // but in future someone need this then we can modify in same if conditon with OR
+        // so we are modifying condition which is not good
 
 
+        // As this will change it's behaviour based on cash, card, UPI, we will strategy here
+//        IPaymentStrategy paymentStrategy = PaymentStrategyFactory.paymentStrategy(paymentMethod);
+//        paymentStrategy.releaseChange(machine, change);
+//        paymentStrategy.receivedCash(machine,amountReceived);
 
-        Transaction transaction =  machine.getPendingPurchase().completeTransaction(paymentMethod,
-                amountReceived,change,System.currentTimeMillis());
+        // This is working, but there is no need of IPaymentStrategy to know about machine and change
+        // but we can implement it clean way like
+
+        IPaymentStrategy paymentStrategy = PaymentStrategyFactory.paymentStrategy(paymentMethod);
+        if (paymentStrategy.doesAffectReserveCash()) {
+            machine.releaseChange(change);
+            machine.receivedCash(amountReceived);
+        }
+
+        // we are using if here which means OCP is breaking, you think like that
+        // but are we really breaking, No, if any new payment needs this then that class will extend
+        // and implement the method, which it is not open for modification
+        // it is open for extenesion
+        // Design pattern donot said donot use if else, use it extensable way
+
+
+        Transaction transaction = machine.getPendingPurchase().completeTransaction(paymentMethod,
+                amountReceived, change, System.currentTimeMillis());
         transactionManager.save(transaction);
 
         machine.resetPurchase();
@@ -83,5 +111,9 @@ public class VendingMachineFacade {
 
     public double amountToPay() {
         return machine.getPendingPurchase().amountToPay();
+    }
+
+    public double amountInReserve() {
+        return machine.amountInReserve();
     }
 }

@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
 
         //add slots and products in machine
-        VENDING_MACHINE.addSlot(new Slot("A1", "Chips", 2.50, 3));
+        VENDING_MACHINE.addSlot(new Slot("A1", "Chips", 2.50, 10));
         VENDING_MACHINE.addSlot(new Slot("A2", "Soda", 1.75, 2));
         VENDING_MACHINE.addSlot(new Slot("A3", "Candy Bar", 6.00, 1));
         VENDING_MACHINE.receivedCash(50);
@@ -55,6 +55,30 @@ public class Main {
         } catch (SlotUnAvaialbleException e) {
             System.out.println("Expected failure: " + e.getMessage());
         }
+
+
+        // additional requirement
+        facade.selectSlot("A1");
+        printIfCompleted(facade, facade.makePayment(PaymentMethod.SPECIAL_CARD,10.00));
+
+        // For UPI payment i want cash back
+        facade.selectSlot("A1");
+        printIfCompleted(facade, facade.makePayment(PaymentMethod.UPI_REWARD,2.25));
+
+        //releaseChange and receivecash for only cashPayment
+        System.out.println("Amount in change Reserve: "+ facade.amountInReserve());
+        facade.selectSlot("A1");
+        printIfCompleted(facade, facade.makePayment(PaymentMethod.UPI_REWARD,2.25));
+        System.out.println("Amount in change Reserve: "+ facade.amountInReserve());
+        // AMOUNT RESEVER WONOT CHANGE WHEN WE MAKE PAYMENT OTHER THAN CASH
+
+        facade.selectSlot("A1");
+        printIfCompleted(facade, facade.makePayment(PaymentMethod.CASH,3.00));
+        System.out.println("Amount in change Reserve: "+ facade.amountInReserve());
+        // RESERVE WILL CHANGE ONLY FOR CASH PAYMENT
+
+
+
 
 
 
