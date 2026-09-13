@@ -6,7 +6,7 @@ import com.parking_lot_lld.practice.state.IState;
 public abstract class CommonSpot implements ISpot{
 
     // default state is available
-    private IState state = AvailableState.getInstance();
+    protected IState state = AvailableState.getInstance();
 
     @Override
     public void setState(IState state) {
