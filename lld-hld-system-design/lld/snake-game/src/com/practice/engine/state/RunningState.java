@@ -18,7 +18,7 @@ public class RunningState implements IGameState {
 
     @Override
     public void move(SnakeGame game, Direction direction) {
-        game.performMove();
+        game.performMove(direction);
     }
 
     @Override
