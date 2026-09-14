@@ -6,7 +6,7 @@ package com.practice.creation_of_threads.fibannoci;
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = {30, 40, 50};
+        int[] arr = {30, 40, 45};
         nrml(arr);
         //using threads
 
@@ -18,6 +18,7 @@ public class Main {
             Thread thread = new Thread(fibannoci);
             thread.start();
         }
+        System.out.println("Time Taken using Threads: " + (System.currentTimeMillis() - time));
 
     }
 
