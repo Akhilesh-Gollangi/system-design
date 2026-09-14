@@ -55,5 +55,10 @@ public class Main {
         for (int i = 0; i < 1000; i++) {
             System.out.println("Hello World");
         }
+
+        //we can create threads using Runnable Interface as well
+        // THis is better, because when we extend class, we are not allowing that class to extend anyother
+        // but if we do implements, a class can implement multiple interface
+        // so it still has ability to extend more close class
     }
 }
