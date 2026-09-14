@@ -48,7 +48,9 @@ public class Main {
         // os will assign randomly, we can give prirority
         // still os will decide which one execute
 
-
+        // here threads are executing concurrently
+        // in single core multiple tasks are running by context switching
+        // but any point of time only thread will execute
 
         for (int i = 0; i < 1000; i++) {
             System.out.println("Hello World");
