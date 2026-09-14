@@ -13,12 +13,11 @@ public class Main {
         System.out.println("Using Threads");
         long time = System.currentTimeMillis();
 
-        for(int i=0;i<arr.length;i++) {
+        for (int i = 0; i < arr.length; i++) {
             Fibannoci fibannoci = new Fibannoci(arr[i]);
             Thread thread = new Thread(fibannoci);
             thread.start();
         }
-        System.out.println("Time Taken using Threads: " + (System.currentTimeMillis() - time));
 
     }
 
@@ -26,7 +25,7 @@ public class Main {
         long time = System.currentTimeMillis();
         for (int i = 0; i < arr.length; i++) {
             Fibannoci fibannoci = new Fibannoci(i);
-            System.out.println(arr[i]+" : " + fibannoci.fib(arr[i]));
+            System.out.println(arr[i] + " : " + fibannoci.fib(arr[i]));
         }
         System.out.println("Time Taken in nrml: " + (System.currentTimeMillis() - time));
     }
