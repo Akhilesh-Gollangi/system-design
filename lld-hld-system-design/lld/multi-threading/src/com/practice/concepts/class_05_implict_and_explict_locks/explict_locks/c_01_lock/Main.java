@@ -1,4 +1,4 @@
-package com.practice.concepts.class_05_implict_and_explict_locks.explict_locks.lock;
+package com.practice.concepts.class_05_implict_and_explict_locks.explict_locks.c_01_lock;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

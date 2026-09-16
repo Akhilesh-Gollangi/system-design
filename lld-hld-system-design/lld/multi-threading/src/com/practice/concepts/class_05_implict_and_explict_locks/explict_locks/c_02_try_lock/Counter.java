@@ -1,4 +1,4 @@
-package com.practice.concepts.class_05_implict_and_explict_locks.explict_locks.try_lock;
+package com.practice.concepts.class_05_implict_and_explict_locks.explict_locks.c_02_try_lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

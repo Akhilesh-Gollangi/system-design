@@ -1,4 +1,4 @@
-package com.practice.concepts.class_05_implict_and_explict_locks.explict_locks.try_lock_with_timmer;
+package com.practice.concepts.class_05_implict_and_explict_locks.explict_locks.c_03_try_lock_with_timmer;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
