@@ -1,4 +1,4 @@
-package com.practice.creation_of_threads.extending_thread_class;
+package com.practice.concepts.extending_thread_class;
 
 //we can create threads in 2ways
 // By extending thread class which we are doing here

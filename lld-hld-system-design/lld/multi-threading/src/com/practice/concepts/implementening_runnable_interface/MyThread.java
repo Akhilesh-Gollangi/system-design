@@ -1,4 +1,4 @@
-package com.practice.creation_of_threads.implementening_runnable_interface;
+package com.practice.concepts.implementening_runnable_interface;
 
 public class MyThread implements Runnable {
 

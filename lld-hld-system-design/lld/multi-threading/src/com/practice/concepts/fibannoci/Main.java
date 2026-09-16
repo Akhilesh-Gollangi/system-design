@@ -1,4 +1,4 @@
-package com.practice.creation_of_threads.fibannoci;
+package com.practice.concepts.fibannoci;
 
 //Generally fibannoci of a larger number will take time
 // if we done for array of integers it will take more time

@@ -1,4 +1,4 @@
-package com.practice.creation_of_threads.remaing_states_syncronized_race_condition.waiting_state;
+package com.practice.concepts.remaing_states_syncronized_race_condition.waiting_state;
 
 public class WaitingThread implements Runnable{
 

@@ -1,4 +1,4 @@
-package com.practice.creation_of_threads.fibannoci;
+package com.practice.concepts.fibannoci;
 
 public class Fibannoci implements Runnable {
 

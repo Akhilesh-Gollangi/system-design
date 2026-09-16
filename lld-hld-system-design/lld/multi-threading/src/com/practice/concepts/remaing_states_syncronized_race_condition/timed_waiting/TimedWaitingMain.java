@@ -1,4 +1,4 @@
-package com.practice.creation_of_threads.remaing_states_syncronized_race_condition.timed_waiting;
+package com.practice.concepts.remaing_states_syncronized_race_condition.timed_waiting;
 
 public class TimedWaitingMain {
 
