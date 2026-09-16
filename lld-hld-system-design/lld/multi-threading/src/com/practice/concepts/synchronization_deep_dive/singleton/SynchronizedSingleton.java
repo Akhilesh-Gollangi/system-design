@@ -25,8 +25,17 @@ public class SynchronizedSingleton {
 
     //Instead of making entire block synchronized, we will make particular critical section synchronized
     public static SynchronizedSingleton getInstance() {
-        if (instance == null) {
 
+        // we write 2 if condition here because
+        // instead of going everytime in synchronized block and check instance
+        // if instance is null then we do to synchronized
+
+        // when t1 comes checks it is null context switched t2 comes check first condtion
+        // t1 acquire lock check codition is null and get instance release lock context switched,
+        // t2 acquire lock check instance it is not null and returned
+        // t3 comes instead of going to synchronized block, acquire lock and check condition
+        // we will check condition at top as we already have instace it will return that
+        if (instance == null) {
             // We call this method with classname as it is a static method
             // so it is not associated with any object
             // but inside synchronized we have to give object
