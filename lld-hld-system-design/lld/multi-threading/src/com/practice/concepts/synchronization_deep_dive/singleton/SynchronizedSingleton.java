@@ -35,6 +35,7 @@ public class SynchronizedSingleton {
             synchronized (SynchronizedSingleton.class) {
                 if (instance == null) {
                     try {
+                        // to force other threads
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         System.out.println("Error");
