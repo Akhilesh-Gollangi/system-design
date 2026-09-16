@@ -6,6 +6,10 @@ public class Main {
         // we make critical block synchronized so that
         // one thread of a same object can access the lock once
 
+        //synchronized is implict lock, here we donot have any control
+        // synchronized internally handles lock and unlock
+
+
         Counter counter = new Counter(0);
         Runnable counterRunnable = new CounterRunnable(counter);
         Thread t1 = new Thread(counterRunnable,"t1");
@@ -19,5 +23,7 @@ public class Main {
 
         System.out.println("Final Count : "+ counter.getCount());
 
+        // So then came Explicit locking, where we have control on it
+        // It is acheived using Lock Interface check that in explicit_locks folder
     }
 }
