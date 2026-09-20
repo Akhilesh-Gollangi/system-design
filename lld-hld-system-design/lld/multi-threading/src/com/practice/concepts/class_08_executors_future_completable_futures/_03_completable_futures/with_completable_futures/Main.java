@@ -43,7 +43,7 @@ public class Main {
 
         CompletableFuture.supplyAsync(() -> 100)
                 .thenApply((x) -> x * 2)
-                .thenAccept((x) -> System.out.println(x));
+                .thenAccept(System.out::println);
 
     }
 
