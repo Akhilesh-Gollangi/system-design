@@ -50,11 +50,11 @@ public class UserService {
         throw new RuntimeException("User with id "+ id + "not found");
     }
 
-    public String updateUser(User user) {
-        User userById = getUserById(user.getId());
-        if (userById != null) {
-            deleteUser(userById.getId());
-            addUser(user);
+    public String updateUser(int id, User updatedUser) {
+        User user = getUserById(id);
+        if (user != null) {
+            deleteUser(id);
+            addUser(updatedUser);
         }
         return "User updated Successfully";
     }

@@ -11,6 +11,13 @@ public class UserController {
     //PUT -> update resource
     //DELETE -> Delete resource
 
+    // url is HTTP method  + endpoint
+    // we can have like this as well same endpoint,different HTTP methods
+    // so both considered as different
+
+    // GET + user
+    // POST + user
+
     private UserService userService = new UserService();
 
     @GetMapping("users")
@@ -41,8 +48,34 @@ public class UserController {
 
     //In postman we will give json, but function want user
     // Framework internally converts json to user
+    // we can use GETMapping as well it will also take request body
+    // But conventions say to create resource use POST
     @PostMapping("user/create")
     public String createUser(@RequestBody User user) {
         return userService.addUser(user);
     }
+
+    // As we are updating specific id, we are using path variable
+    @PutMapping("user/{id}")
+    public String updateUser(@PathVariable  int id, @RequestBody User user) {
+        return userService.updateUser(id,user);
+    }
+
+    // basically we do delete on unique things in most of the cases it is id
+    // so on we are delete specific thing so we use path variable
+    @DeleteMapping("user/{id}")
+    public String deleteUser(@PathVariable int id) {
+        return userService.deleteUser(id);
+    }
+
+    // which is actually taking request tomcat server or our local host
+
+    // localhost will take the request in a specific port like 8080
+    // in this port tomcat will run which will take request and give to dispatcherServlet
+    // will route to proper controller
+    //it is on high level
+
+    // instead of localhost you can use local machine ip as well
+
+
 }
